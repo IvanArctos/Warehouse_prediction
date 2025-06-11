@@ -1,0 +1,9 @@
+fastapi
+python-multipart
+scikit-learn == 1.6.1
+pandas
+numpy
+uvicorn
+torch
+statsmodels
+catboost
