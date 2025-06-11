@@ -1,0 +1,29 @@
+version: '0.1'
+
+services:
+  backend:
+    container_name: forecast_server
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./logs:/logs
+      - ./models:/models
+      - ./data:/data
+
+    restart: always
+
+  telegrambot:
+    container_name: telegrambot
+
+    environment:
+      - BACKEND_URL=http://backend:8000
+      - TOKEN=${TOKEN}
+    build:
+      context: ./telegram
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    restart: always
