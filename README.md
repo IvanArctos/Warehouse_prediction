@@ -13,3 +13,19 @@
  - `telegram` - клиентская часть для получения прогнозов (tg bot) 
 
 ## Установка
+
+Создать тг бота и получить токен для приложения [здесь](https://t.me/BotFather)
+
+Склонировать репозиторий 
+
+```shell
+git clone https://github.com/IvanArctos/Warehouse_prediction.git
+```
+
+Перейти в папку Warehouse_prediction и создать там `.env` файл такой же как и `.env.example` только с полученным ранее токеном бота.
+
+Собрать проект командой 
+
+```shell
+docker compose up -d
+```
